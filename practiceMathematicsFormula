@@ -1,0 +1,16 @@
+// practiceMathematicsFormula.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x = 23;
+	double y = 2.3;
+	double z = 9.8;
+	double f;
+	f =  1/x*x+x+3;
+	cout << f;
+
+}
