@@ -1,0 +1,35 @@
+// CodeToPracticeChar.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char symbol1, symbol2, symbol3;
+    cout << "Enter two initials, without any periods.\n";
+    cin >> symbol1 >> symbol2;
+
+
+    cout << "The two initials are:\n";
+    cout<<symbol1 << symbol2<<endl;
+
+    cout << "Once more with a space.\n";
+    symbol3 = ' ';
+    cout << symbol1 << symbol3 << symbol2 << endl;
+
+    cout << "That's all.Good bye!"<<endl;
+
+    string middle_name, pet_name;
+    string alter_ego_name;
+
+    cout << "Enter your middle name.\n";
+    cin >> middle_name;
+    cout << "Enter your pet name.\n";
+    cin >> pet_name;
+    alter_ego_name = middle_name + pet_name;
+    cout << "The name of alter ego is " << alter_ego_name << "." << endl;
+    return 0;
+}
+
+
