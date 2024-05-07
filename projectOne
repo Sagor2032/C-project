@@ -1,0 +1,90 @@
+/*
+Name: Sagor Ahmmed
+Assignment1: Generate a coin dispenser machine. This machine would dispense change for any appropriate monetary value.
+This value should be less than $100. The machine uses an algorithm which dispenses the
+least number of coins based on the US coin system of quarters, dimes, nickels, and pennies.
+The coin dispenser is also able to accept any number of coins and refund that amount to your credit card.
+*/
+// C++ program for coin dispenser machine
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+//Global Variables
+const int QUARTER = 25;
+const int DIME = 10;
+const int NICKEL = 5;
+const int PENNY = 1;
+
+//#1
+void calculate_coins() {
+    float change;
+    // Input
+    cout << "Enter the amount: $";
+    cin >> change;
+
+    // If the change is negative, exit the program
+    if (change < 0) {
+        cout << "Invalid input. Amount must be positive.\n";
+        exit(1);
+    }
+
+    // Convert to cents
+    int cents = change * 100;
+
+    // Calculate coins
+    int quarters = cents / QUARTER;
+    cents %= QUARTER;
+    int dimes = cents / DIME;
+    cents %= DIME;
+    int nickels = cents / NICKEL;
+    cents %= NICKEL;
+    int pennies = cents;
+
+    // Print output
+    cout << "Value: $" << change << endl;
+    cout << "Quarter: " << quarters << endl;
+    cout << "Dime: " << dimes << endl;
+    cout << "Nickel: " << nickels << endl;
+    cout << "Penny: " << pennies << endl;
+}
+
+//#2
+void calculate_amount() {
+    int quarters, dimes, nickels, pennies;
+    // Prompt user to input their coin denominations
+    cout << "Enter the number of quarters: ";
+    cin >> quarters;
+    if (quarters < 0)
+        exit(1);
+    cout << "Enter the number of dimes: ";
+    cin >> dimes;
+    if (dimes < 0)
+        exit(1);
+    cout << "Enter the number of nickels: ";
+    cin >> nickels;
+    if (nickels < 0)
+        exit(1);
+    cout << "Enter the number of pennies: ";
+    cin >> pennies;
+    if (pennies < 0)
+        exit(1);
+
+    // Convert to cents
+    int total_cents = quarters * QUARTER + dimes * DIME + nickels * NICKEL + pennies * PENNY;
+
+    // Calculate dollars and cents
+    int dollars = total_cents / 100;
+    int cents = total_cents % 100;
+
+    // Print output
+    cout << "You have: $" << dollars << "." << (cents < 10 ? "0" : "") << cents << endl;
+}
+
+int main() {
+
+    calculate_coins();
+    calculate_amount();
+
+    return 0;
+
+}
