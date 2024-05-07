@@ -1,0 +1,22 @@
+// constantStatement.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    const double NORMAL = 98.6;
+    double temperature;
+    cout << "Enter your temperature: ";
+    cin >> temperature;
+
+    if (NORMAL < temperature) {
+        cout << "You have a fever.\n"
+            << "Go see a doctor!" << endl;
+    }
+    else {
+        cout << "You don't have a fever.\n"
+            << "Go to school!" << endl;
+    }
+    return 0;
+}
