@@ -1,0 +1,38 @@
+// switchStatement.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char grade;
+    cout << "Enter your midterm grade\n";
+    cin >> grade;
+
+    switch (grade)
+    {
+    case 'A':
+        cout << "Excellent."
+            << "You don't need to take final.\n";
+        break;
+    case 'B':
+        cout << "Very good.";
+        grade = 'A';
+        cout << "Your midterm grade is now "
+            << grade << endl;
+        break;
+    case 'C':
+        cout << "passing\n";
+        break;
+    case'D':
+    case'F':
+        cout << "You are fail in this course"
+            << "Need to take this course again!";
+        break;
+    default:
+        cout << "This is not a possible grade.\n";
+
+    }
+    cout << "End of midterm grade curve.\n";
+    return 0;
+}
