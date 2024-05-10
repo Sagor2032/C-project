@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+    double balance = 0.00;
+    const double MINTEREST = 0.22;
+    int month = 0;
+    cout<<"What is the balance on your credit card?\n";
+    cin>>balance;
+    cout<<"When will you pay it off? How many month later? \n";
+    cin>>month;
+    int count = 0;
+    cout<<"This program tells you the amount you owe "
+    <<"starting with\n$"<<balance;
+    while (count < month){
+        balance = balance + MINTEREST * balance;
+        count++;
+    }
+    cout<<" After "<<count<<" month,\n";
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    cout<<"Your balance due will be $"<<balance<<endl;
+    return 0;
+}
